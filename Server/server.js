@@ -10,7 +10,7 @@ import userRoutes from './routes/userRoutes.js';
 const app=express();
 const port=process.env.PORT || 4000;
 connectDb();
-const allowedOrigins=['http://localhost:5173','https://mern-authentication-client-4soth3p40-aartis-projects-e94b0736.vercel.app/']
+const allowedOrigins=['http://localhost:5173','https://mern-authentication-client-sigma.vercel.app']
 app.use(express.json());
 app.use(cors({
     origin:allowedOrigins,
