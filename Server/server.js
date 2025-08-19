@@ -14,7 +14,7 @@ connectDb();
 // CORS setup (include deployed frontend URL later)
 const allowedOrigins = [
   "http://localhost:5173", 
-  "https://your-frontend.vercel.app"
+  "https://mern-authentication-client-sigma.vercel.app/"
 ];
 
 app.use(express.json());
