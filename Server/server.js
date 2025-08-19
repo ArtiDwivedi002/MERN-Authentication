@@ -6,22 +6,26 @@ import connectDb from './config/mongoConnect.js';
 import authRouter from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 
-
-const app=express();
-const port=process.env.PORT || 4000;
+const app = express();
 connectDb();
-const allowedOrigins=['http://localhost:5173','https://mern-authentication-client-sigma.vercel.app']
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://mern-authentication-client-sigma.vercel.app'
+];
+
 app.use(express.json());
 app.use(cors({
-    origin:allowedOrigins,
-    credentials:true
+  origin: allowedOrigins,
+  credentials: true
 }));
 app.use(cookieParser());
-app.use('/api/auth',authRouter);
-app.use('/api/user',userRoutes);
-app.get('/',(req,res)=>{
-    res.send("Api is working");
-})
-app.listen(port,()=>{
-    console.log(`Server started on ${port}`);
+
+app.use('/api/auth', authRouter);
+app.use('/api/user', userRoutes);
+
+app.get('/', (req, res) => {
+  res.send("API is working 🚀");
 });
+
+export default app;
